@@ -1,0 +1,40 @@
+name: FirstWorkflow
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, World!
+        
+deploy-dev:
+  runs-on: ubuntu-latest
+  environment:
+    name: dev
+    url: "teste.com"
+    needs: build
+  steps:
+    - name: Run a one-line script
+      run: echo Hello, World!
+      
+deploy-hmg:
+  runs-on: ubuntu-latest
+  environment:
+    name: hmg
+    url: "teste.com"
+    needs: deploy-hmg
+  steps:
+    - name: Run a one-line script
+      run: echo Deploy HMG!
+      
+deploy-pprd:
+  runs-on: ubuntu-latest
+  environment:
+    name: pprd
+    url: "teste.com"
+    needs: deploy-pprd
+  steps:
+    - name: Run a one-line script
+      run: echo Deploy PPRD!
