@@ -14,7 +14,7 @@ deploy-dev:
   environment:
     name: dev
     url: "teste.com"
-    needs: build
+  needs: build
   steps:
     - name: Run a one-line script
       run: echo Hello, World!
@@ -24,17 +24,17 @@ deploy-hmg:
   environment:
     name: hmg
     url: "teste.com"
-    needs: deploy-dev
+  needs: deploy-dev
   steps:
     - name: Run a one-line script
-      run: echo Deploy HMG!
+      run: echo Deploy HMG
       
 deploy-pprd:
   runs-on: ubuntu-latest
   environment:
     name: pprd
     url: "teste.com"
-    needs: deploy-hmg
+  needs: deploy-hmg
   steps:
     - name: Run a one-line script
-      run: echo Deploy PPRD!
+      run: echo Deploy PPRD
