@@ -24,7 +24,7 @@ deploy-hmg:
   environment:
     name: hmg
     url: "teste.com"
-    needs: deploy-hmg
+    needs: deploy-dev
   steps:
     - name: Run a one-line script
       run: echo Deploy HMG!
@@ -34,7 +34,7 @@ deploy-pprd:
   environment:
     name: pprd
     url: "teste.com"
-    needs: deploy-pprd
+    needs: deploy-hmg
   steps:
     - name: Run a one-line script
       run: echo Deploy PPRD!
