@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
-        run: echo Hello, World!
+        run: echo "Hello, World!"
         
 deploy-dev:
   runs-on: ubuntu-latest
@@ -17,7 +17,7 @@ deploy-dev:
   needs: build
   steps:
     - name: Run a one-line script
-      run: echo Hello, World!
+      run: echo "Hello, World!"
       
 deploy-hmg:
   runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ deploy-hmg:
   needs: deploy-dev
   steps:
     - name: Run a one-line script
-      run: echo Deploy HMG
+      run: echo "Deploy HMG"
       
 deploy-pprd:
   runs-on: ubuntu-latest
@@ -37,4 +37,4 @@ deploy-pprd:
   needs: deploy-hmg
   steps:
     - name: Run a one-line script
-      run: echo Deploy PPRD
+      run: echo "Deploy PPRD"
