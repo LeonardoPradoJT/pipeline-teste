@@ -13,7 +13,7 @@ deploy-dev:
   runs-on: ubuntu-latest
   environment:
     name: dev
-    url: "teste.com"
+    url: 'teste.com'
   needs: build
   steps:
     - name: Run a one-line script
@@ -23,7 +23,7 @@ deploy-hmg:
   runs-on: ubuntu-latest
   environment:
     name: hmg
-    url: "teste.com"
+    url: 'teste.com'
   needs: deploy-dev
   steps:
     - name: Run a one-line script
@@ -33,7 +33,7 @@ deploy-pprd:
   runs-on: ubuntu-latest
   environment:
     name: pprd
-    url: "teste.com"
+    url: 'teste.com'
   needs: deploy-hmg
   steps:
     - name: Run a one-line script
